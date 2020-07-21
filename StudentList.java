@@ -3,8 +3,6 @@ import java.text.*;
 import java.util.*;
 public class StudentList {
 	public static void main(String[] args) {
-
-//		Check arguments
 		if(args[0].equals("a")) {
 			System.out.println("Loading data ...");			
 			try {
@@ -28,7 +26,7 @@ public class StudentList {
 			System.out.println(r);
 			String i[] = r.split(",");	
 			Random x = new Random();
-				int y = x.nextInt();
+				int y = (x.nextInt() & Integer.MAX_VALUE) % i.length;
 					System.out.println(i[y]);
 			} catch (Exception e){} 
 			System.out.println("Data Loaded.");			
@@ -67,8 +65,7 @@ public class StudentList {
 				}
 			}
 			} catch (Exception e){} 
-			System.out.println("Data Loaded.");				
-		}
+			System.out.println("Data Loaded.");				}
 		else if(args[0].contains("c")) 
 		{
 			System.out.println("Loading data ...");			
@@ -90,6 +87,4 @@ public class StudentList {
 			System.out.println(count +" word(s) found " + a.length);
 			} catch (Exception e){} 
 			System.out.println("Data Loaded.");				
-		}
-	}
-}
+}	}	}
