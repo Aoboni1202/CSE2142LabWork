@@ -4,6 +4,12 @@ import java.util.*;
 public class StudentList {
 
 	public static void main(String[] args) {
+
+		/* Check argument count */
+		if(args == null || args.length != 1){
+			System.out.println("Please provide a, r, ?, + or c as argument");
+			return;
+		}
 	
 		if(args[0].equals("a")) {
 
@@ -23,8 +29,7 @@ public class StudentList {
 			System.out.println("Data Loaded.");
 		}
 
-		else if(args[0].equals("r")) 
-		{
+		else if(args[0].equals("r")){
 			System.out.println("Loading data ...");			
 			try {
 				BufferedReader s = new BufferedReader(
